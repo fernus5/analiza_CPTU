@@ -192,7 +192,7 @@ if uploaded_file is not None:
                 st.dataframe(df[['D', 'QC_smooth', 'fs_smooth', 'Rf_smooth', 'U_smooth', 'Ic', 'Litologia']]
                              .rename(columns={'D': 'Głębokość [m]', 'QC_smooth': 'qc [MPa]', 'fs_smooth': 'fs [MPa]', 'Rf_smooth': 'Rf [%]', 'U_smooth': 'u2 [kPa]', 'Ic': 'Wskaźnik Ic'})
                              .style.format(format_dict), 
-                             use_container_width=True, hide_index=True)
+                             width="stretch", hide_index=True)
 
     except Exception as e:
         st.error(f"Wystąpił błąd podczas analizy pliku. Upewnij się, że struktura to CPTU (D=, QC=, FS=). Szczegóły: {e}")
